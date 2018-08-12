@@ -1,0 +1,14 @@
+{
+  "name": "puppeteer_article_scraper",
+  "version": "1.0.0",
+  "description": "Web scraping with puppeteer and headless Chrome. Archiving articles into pdfs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Tam",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.7.0"
+  }
+}
