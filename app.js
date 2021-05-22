@@ -54,6 +54,31 @@ async function gotoLinkAndSavePdf(browser, page, links) {
   }
 }
 
+async function saveSinglePage() {
+  const browser = await puppeteer.launch();
+  const page    = await browser.newPage();
+
+  await page.goto('https://dsdshcym.github.io/blog/2018/08/04/how-to-do-outside-in-tdd-with-phoenix/', { waitUntil: 'networkidle2' });
+
+  // Scrape the links off of the page
+  // const links = await page.evaluate(extractLinks);
+
+  // Print the PDF to match styling on screen
+  await page.emulateMedia('screen');
+
+  // Generate PDF with options
+  await page.pdf({
+    path: `./bro.pdf`,
+    format: 'letter',
+    margin: { top: '0.5in', bottom: '0.25in' },
+    printBackground: true
+  });
+
+  await browser.close();
+
+  console.log('Done')
+}
+
 async function scrapeAndExport() {
   const browser = await puppeteer.launch();
   const page    = await browser.newPage();
