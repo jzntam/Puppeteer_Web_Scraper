@@ -9,6 +9,6 @@
   "author": "Jason Tam",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^1.7.0"
+    "puppeteer": "^1.13.0"
   }
 }
